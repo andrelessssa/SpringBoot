@@ -9,18 +9,14 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>API</artifactId>
+	<artifactId>Api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>API</name>
-	<description>Projeto Maven</description>
+	<name>Api</name>
+	<description>Projeto Alura</description>
 	<properties>
 		<java.version>20</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
