@@ -54,7 +54,7 @@ $ ./mvnw spring-boot:build-image -Pnative
 Then, you can run the app like any other container:
 
 ```
-$ docker run --rm -p 8080:8080 Api:0.0.1-SNAPSHOT
+$ docker run --rm -p 8080:8080 api:0.0.1-SNAPSHOT
 ```
 
 ### Executable with Native Build Tools
@@ -71,7 +71,7 @@ $ ./mvnw native:compile -Pnative
 
 Then, you can run the app as follows:
 ```
-$ target/Api
+$ target/api
 ```
 
 You can also run your existing tests suite in a native image.
