@@ -1,10 +1,10 @@
-package com.example.api;
+package com.meucarango.loja;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApiApplicationTests {
+class LojaApplicationTests {
 
 	@Test
 	void contextLoads() {

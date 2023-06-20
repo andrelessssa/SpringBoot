@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href=" /css/lista.css">
+  <title>MeuCarango - Carros</title>
+
+</head>
+<body>
+<div class="content">
+  <h1>Consultar</h1>
+
+
+  <form th:action="@{/consulta}" th:method="post" th:object="${carro}">
+    <h3>Ano:</h3>
+    <input name="ano" type="text" placeholder="Ano" class="inputs required">
+    <h3>Preço:</h3>
+    <select name="valor" class="inputs required">
+      <option value="0">Á Selecionar</option>
+      <option value="5000">5.000 a 10.000</option>
+      <option value="10000">10.000 a 15.000</option>
+      <option value="15000">15.000 a 20.000</option>
+      <option value="20000">20.000 a 25.000</option>
+      <option value="25000">25.000 a 30.000</option>
+      <option value="30000">30.000 a 35.000</option>
+      <option value="40000">40.000 a 45.000</option>
+      <option value="50000">50.000 a 55.000</option>
+    </select>
+    <button type="submit">Consultar</button>
+  </form><br>
+
+  <table>
+
+    <thead>
+    <tr>
+
+      <th>FABRICANTE</th>
+      <th>MODELO</th>
+      <th>PLACA</th>
+      <th>ANO</th>
+      <th>PREÇO</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="carro : ${carro}">
+
+      <td>[[${carro.fabricante}]]</td>
+      <td>[[${carro.modelo}]]</td>
+      <td>[[${carro.placa}]]</td>
+      <td>[[${carro.ano}]]</td>
+      <td>[[${carro.preco}]]</td>
+
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>
+</body>

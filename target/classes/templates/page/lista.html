@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/lista.css">
+  <title>MeuCarango - Carros</title>
+
+</head>
+<body>
+
+<div class="content">
+  <h1>Carros Cadastrados</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>FABRICANTE</th>
+      <th>MODELO</th>
+      <th>PLACA</th>
+      <th>ANO</th>
+      <th>PREÇO</th>
+      <th>VENDER</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="carro : ${carros}">
+      <td>[[${carro.id}]]</td>
+      <td>[[${carro.fabricante}]]</td>
+      <td>[[${carro.modelo}]]</td>
+      <td>[[${carro.placa}]]</td>
+      <td>[[${carro.ano}]]</td>
+      <td>[[${carro.preco}]]</td>
+      <td>
+        <form th:action="@{/lista/{id}(id=${carro.id})}" th:method="delete">
+          <input type="hidden" name="_method" value="delete" />
+          <button type="submit" id="submitButton" style="border: none; background: none; padding: 0;">
+            <img src="/img/verifica.png" alt="Vendido" />
+          </button>
+        </form>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+  <form th:action="@{/novo}" th:method="get">
+    <button type="submit">Novo Carro</button>
+  </form>
+</div>
+</body>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>MeuCarango - Cadastro</title>
+</head>
+<body>
+<div class="content">
+    <h1>Cadastro de veículo  🚘️️</h1>
+    <form th:method="post" th:action="@{/novo}" th:object="${carro}" id="form">
+        <label>Modelo:</label>
+        <div>
+            <input type="text" placeholder="Gol, Fox, Nivus" th:field="*{modelo}" class="inputs required">
+            <span class="msg" th:errors="*{modelo}">Campo obrigatório</span>
+        </div>
+        <label>Placa:</label>
+        <div>
+            <input th:field="*{placa}" type="text" placeholder="MMM-1111" class="inputs required" >
+            <span class="msg" th:errors="*{placa}"></span>
+        </div>
+        <label>Fabricante:</label>
+        <div>
+            <input th:field="*{fabricante}" type="text" placeholder="Volksvagen, Ford" class="inputs required" >
+            <span class="msg" th:errors="*{fabricante}"></span>
+        </div>
+        <label>Ano:</label>
+        <div>
+            <input th:field="*{ano}" type="text" placeholder="2000" class="inputs required" >
+            <span class="msg" th:errors="*{ano}"></span>
+        </div>
+        <label>Preço:</label>
+        <div>
+            <input th:field="*{preco}" type="text" placeholder="R$ 0,00" class="inputs required" >
+            <span class="msg" th:errors="*{preco}"></span>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</div>
+</body>
